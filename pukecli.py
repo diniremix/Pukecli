@@ -23,7 +23,7 @@ def extractpuke(fich):
 		except:
 			print "Ocurrio un error al procesar el archivo",fich
 	else:
-		print fich,"El archivo no existe en la ruta especificada"
+		print "El archivo",fich,"no existe en la ruta especificada"
 
 def listpuke(fich):
 	"Listar el contenido de un archivo puke"
@@ -35,14 +35,14 @@ def listpuke(fich):
 				zip=zipfile.ZipFile(fich,"r")
 				print "Listando informacion del archivo"
 				print 
-				print zip.printdir()
+				print zip.printdir()		
 				zip.close()
 			else:
 				print "El archivo",fich,"no es un archivo puke valido o esta dañado"
 		except:
 			print "Ocurrio un error al procesar el archivo",fich
 	else:
-		print fich,"El archivo no existe en la ruta especificada"
+		print "El archivo",fich,"no existe en la ruta especificada"
 
 parser = argparse.ArgumentParser(usage='%(prog)s [opciones]')
 parser.add_argument("-e", help="Extrae un fichero .puke",type=extractpuke)
